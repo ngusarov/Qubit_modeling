@@ -3,7 +3,6 @@
 
 #include <stdlib.h>
 
-
 #include <math.h>
 #include <iostream>
 
@@ -106,7 +105,7 @@ struct Gate{
         }
 }; // dim = 2*2
 
-GLfloat theta = 0, phi = 0;
+GLfloat theta = PI/4, phi = -PI/2;
 GLfloat theta_new = 0, phi_new = 0;
 GLfloat thetaSpeed = 0, phiSpeed = 0;
 GLdouble radius=3;
@@ -177,10 +176,10 @@ void newRotation(Gate g){
     std::cout << theta << " " << phi << std::endl;
     std::cout << theta_new << " " << phi_new << std::endl;
 
-    thetaSpeed = 0.03;
+    thetaSpeed = 0.3;
 
 
-    phiSpeed = 0.03;//thetaSpeed * (theta - theta_new) / (phi - phi_new);
+    phiSpeed = 0.3;//thetaSpeed * (theta - theta_new) / (phi - phi_new);
 
 
 }
@@ -210,12 +209,12 @@ void idle(void)
 }
 
 
-// óãîë ïîâîðîòà êàìåðû
-float camera_phi = 0.0;
-float camera_z = 0.0;
+// Ã³Ã£Ã®Ã« Ã¯Ã®Ã¢Ã®Ã°Ã®Ã²Ã  ÃªÃ Ã¬Ã¥Ã°Ã»
+float camera_phi = -PI/4;
+float camera_z = 3.0;
 
-//Êëþ÷è ñòàòóñà êàìåðû. Ïåðåìåííûå èíèöèàëèçèðóþòñÿ íóëåâûìè çíà÷åíèÿìè
-//êîãäà êëàâèøè íå íàæàòû
+//ÃŠÃ«Ã¾Ã·Ã¨ Ã±Ã²Ã Ã²Ã³Ã±Ã  ÃªÃ Ã¬Ã¥Ã°Ã». ÃÃ¥Ã°Ã¥Ã¬Ã¥Ã­Ã­Ã»Ã¥ Ã¨Ã­Ã¨Ã¶Ã¨Ã Ã«Ã¨Ã§Ã¨Ã°Ã³Ã¾Ã²Ã±Ã¿ Ã­Ã³Ã«Ã¥Ã¢Ã»Ã¬Ã¨ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¿Ã¬Ã¨
+//ÃªÃ®Ã£Ã¤Ã  ÃªÃ«Ã Ã¢Ã¨Ã¸Ã¨ Ã­Ã¥ Ã­Ã Ã¦Ã Ã²Ã»
 float deltaAngle = 0.01f;
 float deltaZ = 0.1f;
 
@@ -251,7 +250,6 @@ void processNormalKeys(unsigned char key, int x, int y) {
             newRotation(X);
             break;
         case 89 :
-            std::cout << "HERE" << std::endl;
             newRotation(Y);
             break;
         case 90 :
@@ -265,11 +263,12 @@ void processNormalKeys(unsigned char key, int x, int y) {
             newRotation(Gate(Complex(1, 0), Complex(1, 0), Complex(0,0), Complex(0,0), Complex(cos(p),sin(p))));
             break;
         }case 84:{
-            float t = PI/4;
+            float t = 5*PI/4;
             newRotation(Gate(Complex(1, 0), Complex(cos(t/2), 0), Complex(-sin(t/2),0), Complex(cos(t/2),0), Complex(sin(t/2),0)));
             break;
         }
 	}
+	std::cout << (int)key << std::endl;
 	std::cout << condition.a.Re << " " << condition.a.Im << " " << condition.b.Re << " " << condition.b.Im << std::endl;
 }
 
@@ -328,8 +327,8 @@ int main (int argc, char **argv)
     glutInit(&argc, argv);
     glutInitWindowSize(350,350);
     glutCreateWindow("Solid Sphere");
-    theta = 0.0;
-    phi = 0.0;
+    theta = 0;
+    phi = -180;
 
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
@@ -403,7 +402,7 @@ void display(void)
     glPopMatrix();
 
 
-    glColor3f(0.9, 0.3, 0.2);
+    glColor3f(0.5, 0.5, 0.5);
 
     glPushMatrix();
     glRotatef(0.0,1.0,0.0,0.0);
@@ -414,7 +413,7 @@ void display(void)
     glutWireSphere(radius,20,20);
     glPopMatrix();
 
-    glColor3f(1.0, 1.0, 1.0);
+    glColor3f(0.0, 0.0, 0.0);
 
     glPushMatrix();
     // changing in transformation matrix.
@@ -467,6 +466,9 @@ for (int angle = 0; angle < 360; angle+=15) {
     glVertex3f(sin(angle) * 0.25, cos(angle) * 0.25, 2.75);
 }
 glEnd();
+
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    glutPostRedisplay();
 
     //glutWireCone(0.25, 0.5, 4, 4);
     glPopMatrix();

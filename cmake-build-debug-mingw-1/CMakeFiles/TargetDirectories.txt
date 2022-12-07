@@ -1,0 +1,3 @@
+C:/Users/Kolya/OneDrive/C++_coding/Qubit_modeling/cmake-build-debug-mingw-1/CMakeFiles/edit_cache.dir
+C:/Users/Kolya/OneDrive/C++_coding/Qubit_modeling/cmake-build-debug-mingw-1/CMakeFiles/Qubit_modeling.dir
+C:/Users/Kolya/OneDrive/C++_coding/Qubit_modeling/cmake-build-debug-mingw-1/CMakeFiles/rebuild_cache.dir

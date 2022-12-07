@@ -1,10 +1,8 @@
 # depslib dependency file v1.0
-1620723080 source:c:\users\kolya\onedrive\c++_coding\qubit_modeling\main.cpp
+1670423119 source:c:\users\kolya\onedrive\c++_coding\qubit_modeling\main.cpp
 	<GL/freeglut.h>
 	<GL/glu.h>
 	<stdlib.h>
-	<SFML/Graphics.hpp>
-	<SFML/OpenGL.hpp>
 	<math.h>
 	<iostream>
 
@@ -844,7 +842,7 @@
 1619557731 c:\freeglut\include\gl\glut.h
 	"freeglut_std.h"
 
-1619557731 c:\freeglut\include\gl\freeglut_std.h
+1619554131 c:\freeglut\include\gl\freeglut_std.h
 	<windows.h>
 	<EGL/egl.h>
 	<GLES/gl.h>
@@ -855,11 +853,11 @@
 	<GL/glu.h>
 	<stdlib.h>
 
-1619557731 c:\freeglut\include\gl\freeglut.h
+1619554131 c:\freeglut\include\gl\freeglut.h
 	"freeglut_std.h"
 	"freeglut_ext.h"
 
-1619557731 c:\freeglut\include\gl\freeglut_ext.h
+1619554131 c:\freeglut\include\gl\freeglut_ext.h
 	<stdarg.h>
 
 1619560487 c:\users\kolya\onedrive\c++_coding\qubit_modeling\include\glu.h

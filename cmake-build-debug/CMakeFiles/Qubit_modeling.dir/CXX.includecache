@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Kolya/OneDrive/C++_coding/Qubit_modeling/main.cpp
+GL/freeglut.h
+-
+GL/glu.h
+-
+stdlib.h
+-
+math.h
+-
+iostream
+-
+
